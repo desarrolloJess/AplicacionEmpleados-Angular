@@ -1,0 +1,32 @@
+<table class="table mt-4">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Sexo</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empleado of lstEmpleados; let i = index">
+        <td>{{ empleado.nombre }}</td>
+        <td>{{ empleado.correo }}</td>
+        <td>{{ empleado.telefono }}</td>
+        <td>{{ empleado.fecha }}</td>
+        <td>{{ empleado.sexo }}</td>
+        <td>
+            <button class="btn btn-danger" (click)="eliminarEmpleado(i)">Eliminar Empleado</button>
+        </td>
+      </tr>
+    </tbody>
+</table>
+
+@if (lstEmpleados.length === 0) {
+<div class="sinRegistros">
+    <p>
+        sin registros
+    </p>
+</div>
+}
